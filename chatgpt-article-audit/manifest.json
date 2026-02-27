@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "ページ→ChatGPT（コピーして遷移）",
+  "version": "1.0.0",
+  "description": "ページ本文をクリップボードにコピーし、ChatGPTへ遷移します（貼り付けは手動）。短文時は?q=も使用。",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "contextMenus",
+    "notifications",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "ChatGPTへ（コピー＆遷移）"
+  },
+  "commands": {
+    "send-now": {
+      "suggested_key": { "default": "Alt+G" },
+      "description": "ページをコピーしてChatGPTへ遷移"
+    }
+  }
+}
